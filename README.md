@@ -197,3 +197,18 @@ The main structure of this UAV is 3d printed (Aluminum or PLA), the .stl file wi
 ## 6.Acknowledgments
 
 Thanks for LOAM(J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time), [Livox_Mapping](https://github.com/Livox-SDK/livox_mapping), [LINS](https://github.com/ChaoqinRobotics/LINS---LiDAR-inertial-SLAM) and [Loam_Livox](https://github.com/hku-mars/loam_livox).
+
+## Modifications (Victor Andersen, 2026)
+
+This version includes minor modifications compared to the original repository:
+
+- Adjusted default parameters for integration with livox avia
+- Uncommented code for saving pointcloud data.
+- Changed Custommsg dependency to match livox_ros2_driver
+
+These changes do not alter the original architecture of the project.
+
+Original repository:
+https://github.com/Ericsii/FAST_LIO_ROS2
+
+License: GPLv2

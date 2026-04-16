@@ -32,6 +32,20 @@
 // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
+
+/*
+ * This file is part of FAST_LIO_ROS2.
+ *
+ * Modifications by: Victor Andersen (2026)
+ * Changes:
+ *   - Dependy for livox custommsg changed to livox_interfaces/msg/custom_msg.hpp
+ *   - uncommented the pcd save part in publish_frame_world function, and added some comments
+ *
+ * Original project:
+ *   https://github.com/Ericsii/FAST_LIO_ROS2
+ *
+ * License: GPLv2 (see LICENSE file)
+ */
 #include <omp.h>
 #include <mutex>
 #include <math.h>
@@ -510,10 +524,6 @@ void publish_frame_world(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::Share
         publish_count -= PUBFRAME_PERIOD;
     }
 
-    /**************** save map ****************/
-    /* 1. make sure you have enough memories
-    /* 2. noted that pcd save will influence the real-time performences **/
-    /*
     if (pcd_save_en)
     {
         int size = feats_undistort->points.size();
@@ -540,7 +550,7 @@ void publish_frame_world(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::Share
             scan_wait_num = 0;
         }
     }
-    */
+
 }
 
 void publish_frame_body(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudFull_body)
